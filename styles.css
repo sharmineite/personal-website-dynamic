@@ -1,0 +1,272 @@
+@font-face {
+    font-family: 'Gills Sans';
+    src: url('fonts/Gill Sans.otf');
+}
+
+* {
+    margin: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #444;
+    color: #fff;
+    font-family: 'Gills Sans', sans-serif;
+}
+
+h1,
+h2 {
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+}
+
+p {
+    line-height: 1.5;
+    text-align: justify;
+}
+
+p:not(:last-of-type) {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.text-secondary {
+    color: #ffa500;
+}
+
+.heading-lg {
+    font-size: 2.75rem;
+    line-height: 1;
+}
+
+.heading-sm {
+    background-color: #666;
+    border-radius: 3px;
+    font-size: 1.15rem;
+    padding: 0.5rem 1rem;
+}
+
+.home {
+    background-image: url('img/home-background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+}
+
+.home::after {
+    background-color: rgba(68, 68, 68, 0.7);
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#sbn-toggle {
+    display: none;
+}
+
+.nav-icon {
+    cursor: pointer;
+    height: 21px;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    z-index: 2;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    background-color: white;
+    height: 3px;
+    transition: transform 0.5s;
+    width: 30px;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    display: block;
+    position: absolute;
+}
+
+.hamburger::before {
+    top: 9px;
+}
+
+.hamburger::after {
+    top: 18px;
+}
+
+#sbn-toggle:checked ~ .nav-icon > .hamburger {
+    transform: rotate(45deg);
+}
+
+#sbn-toggle:checked ~ .nav-icon > .hamburger::before {
+    transform: rotate(90deg) translateX(-9px);
+}
+
+#sbn-toggle:checked ~ .nav-icon > .hamburger::after {
+    opacity: 0;
+}
+
+.site-header {
+    display: flex;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity 0.5s;
+    z-index: -1;
+}
+
+#sbn-toggle:checked ~ .site-header {
+    opacity: 1;
+    z-index: 1;
+}
+
+#sbn-toggle:checked ~ .site-header > .site-brand,
+#sbn-toggle:checked ~ .site-header > .site-nav {
+    transform: translate3d(0, 0, 0);
+}
+
+.site-brand,
+.site-nav {
+    display: flex;
+    align-items: center;
+    flex-basis: 50%;
+    justify-content: center;
+    transition: transform 0.5s;
+}
+
+.site-brand {
+    background-color: rgba(85, 85, 85, 0.75);
+    transform: translate3d(0, -100%, 0);
+}
+
+.portrait {
+    border: thick solid #ffa500;
+    border-radius: 50%;
+}
+
+.site-nav {
+    background-color: rgba(68, 68, 68, 0.75);
+    transform: translate3d(0, 100%, 0);
+}
+
+.site-nav__list {
+    list-style: none;
+    padding-left: 0;
+    text-align: center;
+}
+
+.site-nav__link {
+    display: inline-block;
+    font-size: 1.75rem;
+    padding: 1rem 0;
+    text-transform: uppercase;
+    transition: color 0.5s;
+}
+
+.site-nav__link:hover,
+.site-nav__link:focus {
+    color: #ffa500;
+}
+
+.site-intro {
+    padding: 2rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.social__link {
+    margin-right: 1rem;
+    transition: color 0.5s linear;
+}
+
+.social__link:hover,
+.social__link:focus {
+    color: #ffa500;
+}
+
+.main-container {
+    background-color: #fff;
+    box-sizing: border-box;
+    color: #444;
+    margin: 5rem auto;
+    max-width: 500px;
+    padding: 1.5rem;
+}
+
+.contact-form__label {
+    display: block;
+}
+
+.contact-form__input,
+.contact-form__select,
+.contact-form__textarea {
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-family: 'Jost', sans-serif;
+    margin-bottom: 1rem;
+    padding: 5px 10px;
+    width: 100%;
+}
+
+.contact-form__textarea {
+    min-height: 5rem;
+    resize: vertical;
+}
+
+.contact-form__submit {
+    background-color: #444;
+    border: 0;
+    border-radius: 3px;
+    color: #fff;
+    font: 1rem 'Jost', sans-serif;
+    padding: 0.5rem 1rem;
+    transition: color 0.5s;
+}
+
+.contact-form__submit:hover,
+.contact-form__submit:focus {
+    color: #ffa500;
+}
+
+@media (max-width: 767px) {
+    p {
+        text-align: center;
+    }
+    .site-header {
+        flex-direction: column;
+    }
+    .portrait {
+        max-width: 210px;
+    }
+    .container {
+        padding: 0 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .site-intro {
+        padding: 5rem;
+    }
+    .heading-lg {
+        font-size: 5rem;
+    }
+}
