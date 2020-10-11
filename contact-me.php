@@ -9,7 +9,7 @@
 
     <main class="container">
         <section class="main-container">
-            <form method="GET" action="about-me.html">
+            <form method="POST" action="">
                 <label for="c_name" class="contact-form__label">Name</label>
                 <input type="text" required placeholder="Name" name="c_name" id="c_name" class="contact-form__input" autofocus>
 

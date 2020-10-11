@@ -13,13 +13,13 @@
                 <a href="./" class="site-nav__link">Home</a>
             </li>
             <li>
-                <a href="./about-me.html" class="site-nav__link">About Me</a>
+                <a href="./about-me.php" class="site-nav__link">About Me</a>
             </li>
             <li>
-                <a href="./portfolio.html" class="site-nav__link">Portfolio</a>
+                <a href="./portfolio.php" class="site-nav__link">Portfolio</a>
             </li>
             <li>
-                <a href="./contact-me.html" class="site-nav__link">Contact Me</a>
+                <a href="./contact-me.php" class="site-nav__link">Contact Me</a>
             </li>
         </ul>
     </nav>
